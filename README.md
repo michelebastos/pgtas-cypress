@@ -1,6 +1,6 @@
-# pgtas-cypress
+# 🚀 Projeto Final - Programação para Automação de Testes em Cypress
 
-Este é um projeto de automação de testes E2E utilizando Cypress para testar funcionalidades de uma aplicação web.
+Este repositório contém o projeto final desenvolvido para o módulo **" Automação de Testes na Camada de Interface (Web)"**, ministrado por **Samuel Lucas** , referente a **Pós-graduação em Automação de Testes de Software**.
 
 ## Pré-requisitos
 
