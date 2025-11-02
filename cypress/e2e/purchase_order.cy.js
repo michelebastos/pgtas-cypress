@@ -5,7 +5,7 @@ import { fillRegistration  } from '../modules/register';
 import { CheckItemsInCart, viewDetailsAddress, includeDetails } from '../modules/cart';
 import { IncludePaymentDetails, confirmOrder } from '../modules/pagament';
 
-describe('Testes de exercicio extra', () => {
+describe('Purchase order test cases', () => {
 
     beforeEach(() => {
         cy.visit('/');
