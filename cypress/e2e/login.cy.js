@@ -8,11 +8,21 @@ describe('Login Test Cases', () => {
         navigateToLogin()
     });
     it('2 - Login User with correct email and password', () => {
-        login('midsa.cardoso@gmail.com', '123456')
+        login(Cypress.env('valid_email'), Cypress.env('valid_password'))
     });
 
-    it('3 - Login User with incorrect email and password', () => {
-        login('midsa.cardoso@gmail.com', '16')
+    it('Login with the correct email address but incorrect password', () => {
+        login(Cypress.env('valid_email'), Cypress.env('invalid_password'))
+        cy.contains('Your email or password is incorrect!').should('be.visible')
+    });
+
+    it('Login with incorrect email and correct password.', () => {
+        login(Cypress.env('invalid_email'), Cypress.env('valid_password'))
+        cy.contains('Your email or password is incorrect!').should('be.visible')
+    });
+
+    it('Login with incorrect email and password', () => {
+        login(Cypress.env('invalid_email'), Cypress.env('invalid_password'))
         cy.contains('Your email or password is incorrect!').should('be.visible')
     });
 });

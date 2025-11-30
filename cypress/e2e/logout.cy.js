@@ -1,6 +1,6 @@
 
 import { navigateToLogin, logout } from '../modules/home';
-import { login } from '../modules/login/';
+import { login } from '../modules/login';
 
 describe('Logout Test Cases', () => {
 
@@ -11,7 +11,7 @@ describe('Logout Test Cases', () => {
 
 
     it('4 - Logout User', () => {
-        login('midsa.cardoso@gmail.com', '123456')
+        login(Cypress.env('valid_email'), Cypress.env('valid_password'))
         logout()
 
     });

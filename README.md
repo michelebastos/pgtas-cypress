@@ -37,36 +37,124 @@ npm install
 
 ## Como Executar os Testes
 
-Para abrir o Cypress Test Runner:
+### Abrir o Cypress Test Runner (interativo):
 ```bash
 npx cypress open
 ```
 
-Para executar todos os testes em modo headless:
+### Executar todos os testes em modo headless:
 ```bash
 npx cypress run
 ```
 
-Para executar um arquivo de teste específico:
+### Executar um arquivo de teste específico:
 ```bash
 npx cypress run --spec "cypress/e2e/login.cy.js"
 ```
+
+### Executar testes com navegador específico:
+```bash
+npx cypress run --browser chrome
+npx cypress run --browser firefox
+```
+
+## 📋 Testes Realizados
+
+### 1. **Login (login.cy.js)**
+Valida a funcionalidade de autenticação do usuário:
+- ✅ Login com credenciais válidas
+- ✅ Validação de mensagens de erro com credenciais inválidas
+- ✅ Verificação de redirecionamento após login bem-sucedido
+- ✅ Persistência de sessão
+
+### 2. **Logout (logout.cy.js)**
+Testa o processo de desconexão do usuário:
+- ✅ Logout bem-sucedido
+- ✅ Limpeza de dados de sessão
+- ✅ Redirecionamento para página de login
+- ✅ Invalidação de token de autenticação
+
+### 3. **Registro de Usuário (register.cy.js)**
+Valida o processo de criação de conta:
+- ✅ Registro com dados válidos
+- ✅ Validação de campos obrigatórios
+- ✅ Verificação de senhas fraca/forte
+- ✅ Validação de email duplicado
+- ✅ Confirmação de email
+- ✅ Mensagens de erro apropriadas
+
+### 4. **Formulário de Contato (contactUs.cy.js)**
+Testa o envio de mensagens de contato:
+- ✅ Envio de mensagem com dados válidos
+- ✅ Validação de campos obrigatórios
+- ✅ Validação de formato de email
+- ✅ Confirmação de envio
+- ✅ Mensagens de sucesso e erro
+
+### 5. **Produtos (product.cy.js)**
+Valida a funcionalidade relacionada a produtos:
+- ✅ Listagem de produtos
+- ✅ Filtro de produtos por categoria
+- ✅ Busca de produtos
+- ✅ Detalhes do produto
+- ✅ Ordenação de produtos (preço, nome)
+- ✅ Paginação
+
+### 6. **Pedidos de Compra (purchase_order.cy.js)**
+Testa o fluxo de compra:
+- ✅ Adição de produtos ao carrinho
+- ✅ Remoção de produtos do carrinho
+- ✅ Cálculo de totais e impostos
+- ✅ Validação de endereço de entrega
+- ✅ Processamento de pagamento
+- ✅ Confirmação de pedido
+- ✅ Geração de número de pedido
+
+### 7. **Assinatura (subscription.cy.js)**
+Valida o processo de assinatura:
+- ✅ Seleção de planos de assinatura
+- ✅ Validação de dados de pagamento
+- ✅ Processamento de assinatura
+- ✅ Confirmação de ativação
+- ✅ Renovação automática
+- ✅ Cancelamento de assinatura
 
 ## Relatórios
 
 Os relatórios HTML dos testes podem ser encontrados em:
 - `cypress/reports/html/`
 
-## Screenshots
+Para visualizar o último relatório:
+```bash
+start cypress/reports/html/index.html
+```
+
+## Screenshots e Vídeos
 
 As capturas de tela dos testes (em caso de falha) são salvas em:
 - `cypress/screenshots/`
 
+Os vídeos das execuções (se configurado) são salvos em:
+- `cypress/videos/`
+
 ## Dependências Principais
 
-- Cypress v15.5.0
-- @faker-js/faker v10.1.0 - Geração de dados de teste
-- cypress-mochawesome-reporter v4.0.2 - Geração de relatórios
+- **Cypress** v15.5.0 - Framework de automação de testes
+- **@faker-js/faker** v10.1.0 - Geração de dados de teste realistas
+- **cypress-mochawesome-reporter** v4.0.2 - Geração de relatórios formatados
+
+## Cobertura de Testes
+
+Este projeto cobre os seguintes cenários:
+- 🔐 Autenticação e Autorização
+- 👤 Gerenciamento de Usuários
+- 🛍️ Catálogo e Busca de Produtos
+- 🛒 Fluxo de Compra Completo
+- 💳 Processamento de Pagamento
+- 📧 Comunicação (Contato e Notificações)
+- 📜 Gerenciamento de Assinaturas
+- ✅ Validação de Formulários
+- ❌ Tratamento de Erros
 
 ## Autor
 

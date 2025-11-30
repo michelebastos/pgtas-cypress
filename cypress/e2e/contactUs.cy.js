@@ -1,6 +1,6 @@
 
 import  { navigateToContactUs } from '../modules/home';
-import { registerContactUsForm } from '../modules/contact/';
+import { registerContactUsForm } from '../modules/contact';
 
 describe('Subsciption Test Cases', () => {
 
